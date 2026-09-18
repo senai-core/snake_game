@@ -11,12 +11,6 @@
     --apagado: #7c89a8;
 }
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
 body {
     min-height: 100vh;
     font-family: "Rubik", sans-serif;
@@ -27,64 +21,30 @@ body {
 }
 
 .barra {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 14px 24px;
     background: var(--painel);
     border-bottom: 2px solid var(--linha);
 }
 
 .barra-logo {
     font-family: "Silkscreen", monospace;
-    font-size: 1.2rem;
     color: var(--ciano);
 }
 
-.barra-recorde {
-    color: var(--apagado);
-}
-
-.barra-recorde strong {
+.destaque,
+.regras b {
     color: var(--ambar);
-}
-
-.menu {
-    width: min(460px, 100% - 32px);
-    margin: 40px auto;
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-}
-
-.apresentacao {
-    text-align: center;
 }
 
 .letreiro {
     font-family: "Silkscreen", monospace;
     font-size: clamp(3rem, 14vw, 5rem);
-    font-weight: 400;
     color: var(--ciano);
     text-shadow: 4px 4px 0 var(--ciano-forte), 8px 8px 0 var(--linha);
 }
 
-.chamada {
-    margin-top: 8px;
-    color: var(--apagado);
-}
-
 .painel {
-    padding: 18px 20px;
     background: var(--painel);
     border: 2px solid var(--linha);
-    border-radius: 6px;
-}
-
-.painel-recorde {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
 }
 
 .painel-rotulo {
@@ -101,66 +61,36 @@ body {
     color: var(--ambar);
 }
 
-.niveis {
-    border: none;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 8px;
-}
-
-.niveis legend {
-    margin-bottom: 10px;
-}
-
-.nivel input {
-    position: absolute;
-    opacity: 0;
-}
-
-.nivel span {
-    display: block;
-    padding: 10px;
-    text-align: center;
+.btn-nivel {
     border: 2px solid var(--linha);
-    border-radius: 4px;
     color: var(--apagado);
-    cursor: pointer;
-    transition: border-color 0.15s, color 0.15s, background 0.15s;
 }
 
-.nivel span:hover {
+.btn-nivel:hover {
     border-color: var(--ciano);
     color: var(--ciano);
 }
 
-.nivel input:checked + span {
+.btn-check:checked + .btn-nivel {
     background: var(--ciano);
     border-color: var(--ciano);
     color: var(--fundo);
     font-weight: 600;
 }
 
-.nivel input:focus-visible + span {
-    outline: 2px solid var(--ambar);
-    outline-offset: 2px;
-}
-
 .botao-comecar {
-    width: 100%;
-    margin-top: 16px;
-    padding: 16px;
+    padding: 14px;
     font-family: "Silkscreen", monospace;
     font-size: 1.6rem;
     color: var(--fundo);
     background: var(--ambar);
     border: none;
-    border-radius: 4px;
     box-shadow: 0 6px 0 #b45309;
-    cursor: pointer;
     transition: transform 0.1s, box-shadow 0.1s;
 }
 
 .botao-comecar:hover {
+    background: var(--ambar);
     transform: translateY(-2px);
     box-shadow: 0 8px 0 #b45309;
 }
@@ -168,14 +98,6 @@ body {
 .botao-comecar:active {
     transform: translateY(4px);
     box-shadow: 0 2px 0 #b45309;
-}
-
-.regras {
-    list-style: none;
-    margin-top: 12px;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
 }
 
 .regras li {
@@ -194,15 +116,8 @@ body {
 }
 
 .regras kbd {
-    padding: 1px 6px;
-    font-family: inherit;
-    font-size: 0.85rem;
+    color: var(--texto);
+    background: var(--fundo);
     border: 1px solid var(--linha);
     border-bottom-width: 3px;
-    border-radius: 4px;
-    background: var(--fundo);
-}
-
-.regras b {
-    color: var(--ambar);
 }
