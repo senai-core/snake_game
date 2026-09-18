@@ -1,0 +1,208 @@
+@import url("https://fonts.googleapis.com/css2?family=Silkscreen&family=Rubik:wght@400;600&display=swap");
+
+:root {
+    --fundo: #0b1020;
+    --painel: #131a2e;
+    --linha: #253052;
+    --ciano: #22d3ee;
+    --ciano-forte: #0891b2;
+    --ambar: #fbbf24;
+    --texto: #e2e8f0;
+    --apagado: #7c89a8;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    font-family: "Rubik", sans-serif;
+    background: var(--fundo);
+    background-image: radial-gradient(var(--linha) 1px, transparent 1px);
+    background-size: 22px 22px;
+    color: var(--texto);
+}
+
+.barra {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 24px;
+    background: var(--painel);
+    border-bottom: 2px solid var(--linha);
+}
+
+.barra-logo {
+    font-family: "Silkscreen", monospace;
+    font-size: 1.2rem;
+    color: var(--ciano);
+}
+
+.barra-recorde {
+    color: var(--apagado);
+}
+
+.barra-recorde strong {
+    color: var(--ambar);
+}
+
+.menu {
+    width: min(460px, 100% - 32px);
+    margin: 40px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.apresentacao {
+    text-align: center;
+}
+
+.letreiro {
+    font-family: "Silkscreen", monospace;
+    font-size: clamp(3rem, 14vw, 5rem);
+    font-weight: 400;
+    color: var(--ciano);
+    text-shadow: 4px 4px 0 var(--ciano-forte), 8px 8px 0 var(--linha);
+}
+
+.chamada {
+    margin-top: 8px;
+    color: var(--apagado);
+}
+
+.painel {
+    padding: 18px 20px;
+    background: var(--painel);
+    border: 2px solid var(--linha);
+    border-radius: 6px;
+}
+
+.painel-recorde {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.painel-rotulo {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--apagado);
+}
+
+.painel-numero {
+    font-family: "Silkscreen", monospace;
+    font-size: 2.2rem;
+    color: var(--ambar);
+}
+
+.niveis {
+    border: none;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+}
+
+.niveis legend {
+    margin-bottom: 10px;
+}
+
+.nivel input {
+    position: absolute;
+    opacity: 0;
+}
+
+.nivel span {
+    display: block;
+    padding: 10px;
+    text-align: center;
+    border: 2px solid var(--linha);
+    border-radius: 4px;
+    color: var(--apagado);
+    cursor: pointer;
+    transition: border-color 0.15s, color 0.15s, background 0.15s;
+}
+
+.nivel span:hover {
+    border-color: var(--ciano);
+    color: var(--ciano);
+}
+
+.nivel input:checked + span {
+    background: var(--ciano);
+    border-color: var(--ciano);
+    color: var(--fundo);
+    font-weight: 600;
+}
+
+.nivel input:focus-visible + span {
+    outline: 2px solid var(--ambar);
+    outline-offset: 2px;
+}
+
+.botao-comecar {
+    width: 100%;
+    margin-top: 16px;
+    padding: 16px;
+    font-family: "Silkscreen", monospace;
+    font-size: 1.6rem;
+    color: var(--fundo);
+    background: var(--ambar);
+    border: none;
+    border-radius: 4px;
+    box-shadow: 0 6px 0 #b45309;
+    cursor: pointer;
+    transition: transform 0.1s, box-shadow 0.1s;
+}
+
+.botao-comecar:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 0 #b45309;
+}
+
+.botao-comecar:active {
+    transform: translateY(4px);
+    box-shadow: 0 2px 0 #b45309;
+}
+
+.regras {
+    list-style: none;
+    margin-top: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.regras li {
+    padding-left: 18px;
+    position: relative;
+}
+
+.regras li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.45em;
+    width: 8px;
+    height: 8px;
+    background: var(--ciano);
+}
+
+.regras kbd {
+    padding: 1px 6px;
+    font-family: inherit;
+    font-size: 0.85rem;
+    border: 1px solid var(--linha);
+    border-bottom-width: 3px;
+    border-radius: 4px;
+    background: var(--fundo);
+}
+
+.regras b {
+    color: var(--ambar);
+}

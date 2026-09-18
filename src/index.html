@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Game</title>
+    <link rel="stylesheet" href="menu.css">
+</head>
+
+<body>
+    <header class="barra">
+        <span class="barra-logo">snake.js</span>
+        <span class="barra-recorde">Recorde: <strong id="recorde-barra">0</strong></span>
+    </header>
+
+    <main class="menu">
+        <section class="apresentacao">
+            <h1 class="letreiro">SNAKE</h1>
+            <p class="chamada">Coma, cresça e não bata em nada.</p>
+        </section>
+
+        <section class="painel painel-recorde">
+            <span class="painel-rotulo">Maior pontuação</span>
+            <span class="painel-numero" id="recorde-painel">0</span>
+        </section>
+
+        <form class="painel" id="form-partida" action="partida.html">
+            <fieldset class="niveis">
+                <legend class="painel-rotulo">Velocidade</legend>
+
+                <label class="nivel">
+                    <input type="radio" name="nivel" value="180">
+                    <span>Lenta</span>
+                </label>
+
+                <label class="nivel">
+                    <input type="radio" name="nivel" value="120" checked>
+                    <span>Normal</span>
+                </label>
+
+                <label class="nivel">
+                    <input type="radio" name="nivel" value="75">
+                    <span>Rápida</span>
+                </label>
+            </fieldset>
+
+            <button type="submit" class="botao-comecar">Começar</button>
+        </form>
+
+        <section class="painel">
+            <span class="painel-rotulo">Regras</span>
+            <ul class="regras">
+                <li><kbd>Setas</kbd> ou <kbd>WASD</kbd> movem a cobra</li>
+                <li>Cada fruta vale <b>10 pontos</b></li>
+                <li>Encostar na borda encerra a partida</li>
+                <li>Encostar no próprio corpo também</li>
+            </ul>
+        </section>
+    </main>
+
+    <script src="menu.js"></script>
+</body>
+
+</html>
