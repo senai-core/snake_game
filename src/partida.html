@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Game - Partida</title>
+    <link rel="stylesheet" href="partida.css">
+</head>
+
+<body>
+    <header class="placar">
+        <a href="index.html" class="link-menu">&larr; Menu</a>
+
+        <div class="placar-bloco">
+            <span class="placar-rotulo">Pontos</span>
+            <span class="placar-valor" id="pontos">0</span>
+        </div>
+
+        <div class="placar-bloco">
+            <span class="placar-rotulo">Recorde</span>
+            <span class="placar-valor placar-valor-recorde" id="recorde">0</span>
+        </div>
+    </header>
+
+    <main class="campo">
+        <div class="tabuleiro" id="tabuleiro"></div>
+
+        <div class="fim" id="fim">
+            <h2 class="fim-titulo">Game Over</h2>
+            <p class="fim-pontos" id="fim-pontos">0 pontos</p>
+            <p class="fim-recorde" id="fim-recorde"></p>
+            <button class="botao-denovo" id="botao-denovo">Jogar de novo</button>
+            <a href="index.html" class="link-menu">Voltar ao menu</a>
+        </div>
+    </main>
+
+    <nav class="direcional">
+        <button class="seta seta-cima" data-direcao="cima" aria-label="Cima">&#9650;</button>
+        <button class="seta seta-esquerda" data-direcao="esquerda" aria-label="Esquerda">&#9664;</button>
+        <button class="seta seta-baixo" data-direcao="baixo" aria-label="Baixo">&#9660;</button>
+        <button class="seta seta-direita" data-direcao="direita" aria-label="Direita">&#9654;</button>
+    </nav>
+
+    <script src="partida.js"></script>
+</body>
+
+</html>

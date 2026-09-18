@@ -1,0 +1,211 @@
+@import url("https://fonts.googleapis.com/css2?family=Silkscreen&family=Rubik:wght@400;600&display=swap");
+
+:root {
+    --fundo: #0b1020;
+    --painel: #131a2e;
+    --linha: #253052;
+    --ciano: #22d3ee;
+    --ciano-claro: #a5f3fc;
+    --ambar: #fbbf24;
+    --perigo: #f43f5e;
+    --texto: #e2e8f0;
+    --apagado: #7c89a8;
+    --quadrado: 24px;
+    --tamanho: 20;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    padding: 16px;
+    font-family: "Rubik", sans-serif;
+    background: var(--fundo);
+    color: var(--texto);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    user-select: none;
+}
+
+.placar {
+    width: calc(var(--quadrado) * var(--tamanho) + 8px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.link-menu {
+    color: var(--apagado);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.15s;
+}
+
+.link-menu:hover {
+    color: var(--ciano);
+}
+
+.placar-bloco {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.placar-rotulo {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--apagado);
+}
+
+.placar-valor {
+    font-family: "Silkscreen", monospace;
+    font-size: 1.8rem;
+    color: var(--ciano);
+}
+
+.placar-valor-recorde {
+    color: var(--ambar);
+}
+
+.campo {
+    position: relative;
+}
+
+.tabuleiro {
+    display: grid;
+    grid-template-columns: repeat(var(--tamanho), var(--quadrado));
+    grid-template-rows: repeat(var(--tamanho), var(--quadrado));
+    padding: 2px;
+    background: var(--painel);
+    border: 2px solid var(--linha);
+}
+
+.quadrado {
+    border: 1px solid rgba(37, 48, 82, 0.35);
+}
+
+.quadrado.corpo {
+    background: var(--ciano);
+    border-color: var(--fundo);
+}
+
+.quadrado.cabeca {
+    background: var(--ciano-claro);
+    border-color: var(--fundo);
+    box-shadow: 0 0 10px var(--ciano);
+}
+
+.quadrado.fruta {
+    background: var(--ambar);
+    border: 5px solid var(--painel);
+    animation: piscar 0.6s steps(2) infinite;
+}
+
+@keyframes piscar {
+    50% {
+        border-width: 3px;
+    }
+}
+
+.fim {
+    position: absolute;
+    inset: 0;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    background: rgba(11, 16, 32, 0.9);
+    text-align: center;
+}
+
+.fim.aberto {
+    display: flex;
+}
+
+.fim-titulo {
+    font-family: "Silkscreen", monospace;
+    font-size: 2.4rem;
+    font-weight: 400;
+    color: var(--perigo);
+}
+
+.fim-pontos {
+    font-family: "Silkscreen", monospace;
+    font-size: 1.2rem;
+    color: var(--ciano);
+}
+
+.fim-recorde {
+    color: var(--ambar);
+    min-height: 1.2em;
+}
+
+.botao-denovo {
+    padding: 12px 22px;
+    font-family: "Silkscreen", monospace;
+    font-size: 1rem;
+    color: var(--fundo);
+    background: var(--ambar);
+    border: none;
+    border-radius: 4px;
+    box-shadow: 0 4px 0 #b45309;
+    cursor: pointer;
+}
+
+.botao-denovo:active {
+    transform: translateY(3px);
+    box-shadow: 0 1px 0 #b45309;
+}
+
+.direcional {
+    display: grid;
+    grid-template-columns: repeat(3, 54px);
+    grid-template-rows: repeat(2, 54px);
+    gap: 6px;
+}
+
+.seta {
+    font-size: 1.1rem;
+    color: var(--ciano);
+    background: var(--painel);
+    border: 2px solid var(--linha);
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.seta:active {
+    background: var(--linha);
+}
+
+.seta-cima {
+    grid-column: 2;
+}
+
+.seta-esquerda {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.seta-baixo {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.seta-direita {
+    grid-column: 3;
+    grid-row: 2;
+}
+
+@media (max-width: 520px) {
+    :root {
+        --quadrado: 16px;
+    }
+}
